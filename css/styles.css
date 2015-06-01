@@ -1,0 +1,20 @@
+#dropdownMenu1 {
+  width: 200px;
+  text-align: left;
+}
+
+body {
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-color: #CCCCCC;
+
+}
+
+#center-piece {
+  text-align: center;
+  margin: 0 auto;
+  padding: 50px 50px 0px 50px;
+}
