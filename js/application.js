@@ -3,6 +3,8 @@
 $(document).ready(function() {
   console.log('test1');
   $(".not-there").show();
+  $("form").hide();
+
 
   var serverURL = 'https://evening-gorge-5099.herokuapp.com';
 
@@ -53,7 +55,7 @@ $(document).ready(function() {
     console.log("singin button works")
     $(".not-there").hide();
     $("#list_contents").hide()
-    $("#").show()
+    $("form").show();
   });
 
 });
