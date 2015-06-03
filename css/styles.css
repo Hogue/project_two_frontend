@@ -34,3 +34,11 @@ body {
     left: 37%;
   }
 }
+
+.bathrooms-layout {
+  font-size: 40px;
+}
+
+.not-there {
+  display: none;
+}

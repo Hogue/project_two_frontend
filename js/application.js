@@ -2,6 +2,25 @@
 
 $(document).ready(function() {
   console.log('test1');
+  $(".not-there").show();
+
+  var serverURL = 'https://evening-gorge-5099.herokuapp.com';
+
+
+
+
+  // Load the neighborhood list
+  // $.get(
+  //   serverURL + "/neighborhoods"
+  // ).done(function(data){
+  //   data.forEach(function(neighborhood){
+  //     $("#dropdownMenu").append('<li role="presentation"><a role="menuitem" tabindex="-1" id="' + neighborhood.name.toLowerCase() + '" href="#">' + neighborhood.name + '</a></li>');
+  //   });
+  // }).fail(function(err){
+  //   console.error("Couldn't load neighborhood list");
+  // });
+
+
 
   $("#dropdownMenu1").on("click", function(event){
     console.log('test');
@@ -14,7 +33,7 @@ $(document).ready(function() {
     console.log('itworks');
     $.ajax({
         type: 'GET',
-        url: 'http://localhost:3000/neighborhoods/35/bathrooms'
+        url: serverURL + '/neighborhoods/5/bathrooms'
       }).done(function(response){
         // we got a successful response, so we know
         $('#list_contents').html();
@@ -28,6 +47,13 @@ $(document).ready(function() {
         alert('failure');
       });
 
+  });
+
+  $("#sign_in_button").on("click", function(){
+    console.log("singin button works")
+    $(".not-there").hide();
+    $("#list_contents").hide()
+    $("#").show()
   });
 
 });
