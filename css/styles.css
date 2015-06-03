@@ -1,7 +1,7 @@
-#dropdownMenu1 {
-  width: 200px;
-  text-align: left;
+.navbar {
+  background: rgba(80,227,194, .6);
 }
+
 
 body {
   -webkit-background-size: cover;
@@ -13,8 +13,24 @@ body {
 
 }
 
-#center-piece {
+.center-piece {
   text-align: center;
   margin: 0 auto;
   padding: 50px 50px 0px 50px;
+}
+
+.dropdown-menu {
+  left: 42%;
+}
+
+
+@media(max-width: 1000px) {
+  .dropdown-menu {
+    left: 40%;
+  }
+}
+@media(max-width: 900px){
+  .dropdown-menu {
+    left: 37%;
+  }
 }

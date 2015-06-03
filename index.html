@@ -4,9 +4,11 @@
   <meta charset="utf-8">
   <title>ToiletSeek</title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" />
+
   <link rel="stylesheet" type="text/css" href="css/styles.css">
-  <script src="https://code.jquery.com/jquery-2.1.4.min.js" type="text/javascript"></script>
-  <script src="/javascripts/application.js" type="text/javascript" charset="utf-8" async defer></script>
+   <script src="https://code.jquery.com/jquery-2.1.4.min.js" type="text/javascript"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js" type="text/javascript"></script>
+  <script src="js/application.js" type="text/javascript" charset="utf-8" async defer></script>
 
   <nav class="navbar navbar-default">
   <div class="container-fluid">
@@ -23,29 +25,46 @@
 <body>
 
   <div class='container'>
-
     <div class='row'>
-      <div class='col-xs-12' id='center-piece'><img alt='Brand' src='imagery/toilet2.png'></div>
+      <div class="col-xs-12 center-piece"><img alt='Brand' src='imagery/toilet2.png'></div>
     </div>
-
     <div class='row'>
-      <div class='col-xs-12' id='center-piece'>
+      <div class="col-xs-12 center-piece">
         <div class="dropdown">
-  <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-expanded="true">
-    Dropdown
-    <span class="caret"></span>
-  </button>
-  <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
-    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Action</a></li>
-    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Another action</a></li>
-    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Something else here</a></li>
-    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Separated link</a></li>
-  </ul>
-</div>
+          <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-expanded="true">
+            Neighborhoods
+            <span class="caret"></span>
+          </button>
+          <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+            <li role="presentation"><a role="menuitem" tabindex="-1" id="Allston" href="#">Allston</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Back Bay</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Bay Village</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Beacon Hill</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Brighton</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Charlestown</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Chinatown</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Dorchester</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Downtown</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="#">East Boston</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Fenway Kenmore</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Hyde Park</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Jamaica Plain</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Mattapan</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Mission Hill</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="#">North End</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Roxbury</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="#">South Boston</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="#">South End</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="#">West End</a></li>
+          </ul>
+        </div>
+    <div class='row'>
+      <div class="col-xs-12 content">
+        <div id="list-contents"></div>
       </div>
     </div>
+  </div>
 
-</div>
 
 </body>
 
