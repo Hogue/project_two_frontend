@@ -10,16 +10,19 @@ $(document).ready(function() {
   // get all neighbhorhoods on load
   // so they can be used with a click handler later
   var neighborhood_names = [];
+
   $.get(
     serverURL + "/neighborhoods"
-  ).done(function(res){
+  )
+  .done(function(res){
     // console.log(res);
     // console.log(res.neighborhoods);
-    neighborhood_names = res.neighborhoods.map(function(neighborhood){
-      return neighborhood.name;
+    neighborhood_names = res.map(function(neighborhood){
+      return [neighborhood.name, neighborhood.id];
     });
     // console.log(neighborhood_names);
-  }).fail(function(err){
+  })
+  .fail(function(err){
     console.error("Couldn't load neighborhood list");
   });
 
@@ -27,15 +30,14 @@ $(document).ready(function() {
     // console.log("CLICKED!");
     // console.log($(".dropdown-menu"));
     $(".dropdown-menu").html(''); //Clear the menu
-    neighborhood_names.forEach(function(name){ //For each neighborhood:
+    neighborhood_names.forEach(function(pair){ //For each neighborhood:
       // console.log(name);
       // Make a new <li> inside the dropdown menu.
       // $(".dropdown-menu").append("<li>" + name + "</li>");
       $(".dropdown-menu").append(
-        '<li role="presentation"><a role="menuitem" tabindex="-1" id="' + name.toLowerCase() + '" href="#">' + name + '</a></li>');
+        '<li role="presentation"><a role="menuitem" tabindex="-1" data-id="' + pair[1] + '" href="#">' + pair[0] + '</a></li>');
+
     });
   });
-
-
 
 });

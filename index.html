@@ -40,7 +40,7 @@
             Neighborhoods
             <span class="caret"></span>
           </button>
-          <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+          <ul id="neighborhoods" class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
             <!-- <li role="presentation"><a role="menuitem" tabindex="-1" id="allston" href="#">Allston</a></li>
             <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Back Bay</a></li>
             <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Bay Village</a></li>
@@ -73,6 +73,14 @@
         </div>
       </div>
 
+      <script id='bathrooms' type="text/x-handlebars-template">
+        <div class="col-xs-12">
+         <h2>{{name}}</h2>
+            {{#each bathrooms}}
+              <h4>{{location}}</h4>
+             {{/each}}
+        </div>
+      </script>
 
         <script id="bathroom-index" type="text/x-handlebars-template">
           {{#each neighborhoods}}

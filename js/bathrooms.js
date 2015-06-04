@@ -32,5 +32,24 @@ var bathrooms = (function(){
 
 $(document).ready(function(){
 
+$("#neighborhoods").on('click', function(event){
+  var bathroom_id = event.target.dataset.id;
+  // alert("BATHROOOM ID IS " + bathroom_id);
+
+  $.ajax({
+    url: 'http://localhost:3000/neighborhoods/' + bathroom_id,
+    dataType: 'json',
+    method: 'GET'
+  })
+  .done(function(neighborhood_data){
+    console.log(neighborhood_data);
+    var template = Handlebars.compile($('#bathrooms').html());
+
+     var results = template(neighborhood_data);
+
+     $("#content").html(results);
+
+  })
+});
 
 });
