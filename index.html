@@ -6,10 +6,11 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" />
   <link rel="stylesheet" type="text/css" href="css/styles.css">
 
+  <script src="js/handlebars-v3.0.3.js"></script>
    <script src="https://code.jquery.com/jquery-2.1.4.min.js" type="text/javascript"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js" type="text/javascript"></script>
-  <script src="js/application.js" type="text/javascript" charset="utf-8" async defer></script>
-
+  <script src="js/app.js" type="text/javascript" charset="utf-8" async defer></script>
+  <script src="js/bathrooms.js" type="text/javascript" charset="utf-8" async defer></script>
   <nav class="navbar navbar-default">
     <div class="container-fluid">
       <div class="navbar-header">
@@ -40,7 +41,7 @@
             <span class="caret"></span>
           </button>
           <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
-            <li role="presentation"><a role="menuitem" tabindex="-1" id="allston" href="#">Allston</a></li>
+            <!-- <li role="presentation"><a role="menuitem" tabindex="-1" id="allston" href="#">Allston</a></li>
             <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Back Bay</a></li>
             <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Bay Village</a></li>
             <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Beacon Hill</a></li>
@@ -59,24 +60,33 @@
             <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Roxbury</a></li>
             <li role="presentation"><a role="menuitem" tabindex="-1" href="#">South Boston</a></li>
             <li role="presentation"><a role="menuitem" tabindex="-1" href="#">South End</a></li>
-            <li role="presentation"><a role="menuitem" tabindex="-1" href="#">West End</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="#">West End</a></li> -->
           </ul>
         </div>
-        <div class='row'>
-          <div class="col-xs-12 content">
-            <div class="bathrooms-layout" id="list_contents">
-              <script id="bathrooms-index" type="text/x-handlebars-template">
-                {{#each bathrooms}}
-                    <div class="col-xs-12">
-                      <h2>{{location}}</h2>
-                      <h4>{{address}}</h4>
-                      <p>{{description}}</p>
-                    </div>
-                {{/each}}
-              </script>
-            </div>
-          </div>
+
+       <div class="content-container">
+        <div class="page-header">
+          <h1>Bathrooms</h1>
         </div>
+            <div class="row">
+            <div id="content"></div>
+        </div>
+      </div>
+
+
+        <script id="bathroom-index" type="text/x-handlebars-template">
+          {{#each neighborhoods}}
+              <div class="col-xs-12">
+                <h2>{{name}}</h2>
+                {{#each bathrooms}}
+                  <h4>{{location}}/</h4>
+                {{/each}}
+              </div>
+          {{/each}}
+        </script>
+
+
+
       </div>
     </div>
     <form class="form-signin">

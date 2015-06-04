@@ -1,29 +1,36 @@
 "use strict";
 
-var characters = (function(){
+var bathrooms = (function(){
 
-  var getCharacters = function(){
-    $.getJSON( "lib/characters.json").success(function(response){
-      _renderCharacters(response.characters);
+  var getBathrooms = function(){
+    $.get( "http://localhost:3000/neighborhoods").done(function(response){
+      _renderBathrooms(response.neighborhoods);
     });
   };
 
-  var _renderCharacters = function(characters){
-    console.log(characters);
-    // your code starts here
-  var templatingFunction = Handlebars.compile($('#character-index').html());
+  var _renderBathrooms = function(neighborhoods){
+
+
+
+  var templatingFunction = Handlebars.compile($('#bathroom-index').html());
+
+
+
   var results = templatingFunction({
-    characters: characters
+    neighborhoods: neighborhoods
   });
+  console.log(results);
+
     $("#content").html(results);
   };
 
   return {
-    indexCharacters: getCharacters
+    indexBathrooms: getBathrooms
   };
 
 })();
 
 $(document).ready(function(){
-  characters.indexCharacters();
+
+
 });
