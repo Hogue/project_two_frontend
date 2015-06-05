@@ -12,7 +12,7 @@ var bathrooms = (function(){
 
 
 
-  var templatingFunction = Handlebars.compile($('#bathrooms').html());
+  var templatingFunction = Handlebars.compile($('#bathroom-index').html());
 
 
 

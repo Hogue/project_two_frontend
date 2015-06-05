@@ -1,14 +1,9 @@
 'use strict';
 
-$(document).ready(function() {
+$(document).ready(function(){
 
-  // hide signin form on load
-  $("form").hide();
-
-  // save url to a variable
   var serverURL = 'http://localhost:3000';
-  // get all neighbhorhoods on load
-  // so they can be used with a click handler later
+
   var neighborhood_names = [];
 
   $.get(
@@ -16,28 +11,74 @@ $(document).ready(function() {
   )
   .done(function(res){
     // console.log(res);
-    // console.log(res.neighborhoods);
     neighborhood_names = res.map(function(neighborhood){
       return [neighborhood.name, neighborhood.id];
     });
     console.log(neighborhood_names);
   })
-  .fail(function(err){
-    console.error("Couldn't load neighborhood list");
+  .fail(function(res){
+    console.error("couldn't load the neighborhoods list")
   });
 
-  $("#dropdownMenu1").on("click", function() {
-    // console.log("CLICKED!");
-    // console.log($(".dropdown-menu"));
-    $(".dropdown-menu").html(''); //Clear the menu
-    neighborhood_names.forEach(function(pair){ //For each neighborhood:
-      // console.log(name);
-      // Make a new <li> inside the dropdown menu.
-      // $(".dropdown-menu").append("<li>" + name + "</li>");
+  $("#dropdownMenu1").on("click", function(){
+
+    $(".dropdown-menu").html('');
+    neighborhood_names.forEach(function(pair){
+
       $(".dropdown-menu").append(
         '<li role="presentation"><a role="menuitem" tabindex="-1" data-id="' + pair[1] + '" href="#">' + pair[0] + '</a></li>');
+    });
+  });
 
+  $("#register-user").click("click", function(){
+    console.log("button clicked");
+
+    var newUser = {credentials: {
+                    email: $("#register-user-email").val(),
+                    password: $("#register-user-password").val()}}
+
+
+    $.ajax({
+      url: 'http://localhost:3000/register',
+      data: newUser,
+      datatype: 'json',
+      method: 'POST'
+    })
+    .done(function(){
+      console.log("new user successfully registered");
+    })
+    .fail(function(){
+      console.log("unable to create new user");
+    });
+  });
+
+  $("#signin_button").on("click", function(){
+    console.log("signing butotn workssss");
+
+    $.ajax('http://localhost:3000/login',{
+      contentType: 'application/json',
+      processData: false,
+      data: JSON.stringify({
+        credentials: {
+          email: $('#input_email').val(),
+          password: $('#input_password').val()
+        }
+      }),
+      dataType: "json",
+      method: "POST"
+    }).done(function(data, textStatus) {
+      $('#token').val(textStatus == 'nocontent' ? 'login failed' : data['token']);
+      console.log(data);
+    }).fail(function(jqxhr, textStatus, errorThrown){
+      console.log(textStatus);
+      console.log(errorThrown);
     });
   });
 
 });
+
+
+
+
+
+

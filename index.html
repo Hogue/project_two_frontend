@@ -11,22 +11,14 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js" type="text/javascript"></script>
   <script src="js/app.js" type="text/javascript" charset="utf-8" async defer></script>
   <script src="js/bathrooms.js" type="text/javascript" charset="utf-8" async defer></script>
-  <nav class="navbar navbar-default">
-    <div class="container-fluid">
-      <div class="navbar-header">
-        <a class="navbar-brand" href="#">
-          <img alt="Brand" src="imagery/toilet.png">
-        </a>
-      </div>
-      <div id="signin_button_background">
-      <ul class="nav navbar-nav navbar-right">
-        <li id='sign_in_button'><a href="#">Sign In</a></li>
-      </div>
-  </div>
-  </nav>
 
-</head>
-
+    <header>
+    <img alt="Brand" src="imagery/toilet.png">
+    <nav>
+      <ul>
+        <li id='sign_in_link'><a href="#">Sign In</a></li>
+      </ul>
+    </nav>
 <body>
 
   <div class='container'>
@@ -76,38 +68,49 @@
       <script id='bathrooms' type="text/x-handlebars-template">
         <div class="col-xs-12">
          <h2>{{name}}</h2>
+         <hr>
             {{#each bathrooms}}
               <h4>{{location}}</h4>
               <h4>{{address}}</h4>
               <p>{{description}}</p>
+              <hr>
              {{/each}}
         </div>
       </script>
 
-        <script id="bathroom-index" type="text/x-handlebars-template">
-          {{#each neighborhoods}}
-              <div class="col-xs-12">
-                <h2>{{name}}</h2>
-                {{#each bathrooms}}
-                  <h4>{{location}}</h4>
-                {{/each}}
-              </div>
-          {{/each}}
-        </script>
 
-
-
-      </div>
-    </div>
-    <form class="form-signin">
-    <h2 class="form-signin-heading">Sign In</h2>
-    <label for="inputEmail" class="sr-only">Email address</label>
-    <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
-    <label for="inputPassword" class="sr-only">Password</label>
-    <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
-    <button classs="btn btn-lg btn-primary btn-block" id="signin_button" type="submit">Sign in</button>
+    <form class="form-group">
+      <h2 class="form-signin-heading">Register</h2>
+      <input type="email" class="form-control" id="register-user-email" placeholder="Enter email">
+      <input  class="form-control" id="register-user-password" placeholder="Password">
+      <input type="password-check" class="form-control" id="password-confirmation" placeholder="Confirm Password">
+      <button type="button" class="btn btn-default button_default_style" id="register-user">Submit</button>
     </form>
-  </div>
+
+    <form class="form-signin">
+      <h2 class="form-signin-heading">Sign In</h2>
+      <input type="email" class="form-control" id="input_email" placeholder="Email Address">
+      <input  class="form-control" id="input_password" placeholder="Password">
+      <button type="button" class="btn btn-default button_default_style" id="signin_button">Submit</button>
+    </form>
+
+   <!--  <form class="form-signin">
+    <h2 class="form-signin-heading">Sign In</h2>
+    <input type="email" id="input_email" class="form-control" placeholder="Email address" required autofocus>
+    <input type="password" id="input_password" class="form-control" placeholder="Password" required>
+    <button classs="btn btn-default button_default_style" id="signin_button" type="button">Sign in</button>
+    </form> -->
+
+    <form>
+    <select class="form-control input-lg">...</select>
+    <input class="form-control input-lg" type="text" placeholder="location">
+    <input class="form-control input-lg" type="text" placeholder="address">
+    <textarea class="form-control" rows="3" placeholder="description"></textarea>
+    <button class="btn btn-default button_default_style" id="add_bathroom_button" type="button">Submit</button>
+    </form>
+
+
+
 
 
 </body>

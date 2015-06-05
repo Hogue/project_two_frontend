@@ -1,6 +1,9 @@
 .navbar {
   background: rgba(80,227,194, .6);
+  margin: 0px;
 }
+
+
 
 
 body {
@@ -10,11 +13,6 @@ body {
   background-size: cover;
   background-repeat: no-repeat;
   background-color: #CCCCCC;
-
-}
-
-#sign_in_button {
-  display: inline-block;
 
 }
 
@@ -54,6 +52,12 @@ body {
   display: none;
 }*/
 
+.form-group {
+  max-width: 330px;
+  padding: 15px;
+  margin: 0 auto;
+}
+
 .form-signin {
   max-width: 330px;
   padding: 15px;
@@ -83,7 +87,7 @@ label {
 
 }
 
-.form-signin input[type="email"] {
+/*.form-signin input[type="email"] {
   margin-bottom: -1px;
   border-bottom-right-radius: 0;
   border-bottom-left-radius: 0;
@@ -100,7 +104,7 @@ label {
   margin-bottom: 10px;
   border-bottom-right-radius: 0;
   border-bottom-left-radius: 0;
-}
+}*/
 
 /*.btn-block {
   display: block;
@@ -128,21 +132,46 @@ label {
   text-align: center;
   white-space: nowrap;
 }*/
-
+/*
 #signin_button {
   max-width: 100%;
   width: 300px;
   height: 46px;
   color: #fff;
   background-color: #337ab7;
-  /*border-color: #2e6da4;*/
   padding: 10px 16px 10px 16px;
   font-size: 18px;
   line-height: 1.3333333;
   border-radius: 8px;
   display: block;
+}*/
+
+.button_default_style {
+  max-width: 100%;
+  color: #fff;
+  background-color: #337ab7;
+  padding: 10px 16px 10px 16px;
+  font-size: 18px;
+  line-height: 1.3333333;
+  border-radius: 8px;
+  display: block;
+
 }
 
+/*#register-user {
+  max-width: 100%;
+  width: 300px;
+  height: 46px;
+  color: #fff;
+  background-color: #337ab7;
+  border-color: #2e6da4;
+  padding: 10px 16px 10px 16px;
+  font-size: 18px;
+  line-height: 1.3333333;
+  border-radius: 8px;
+  display: block;
+
+}*/
 
 
 
