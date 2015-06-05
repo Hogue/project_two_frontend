@@ -20,7 +20,7 @@ $(document).ready(function() {
     neighborhood_names = res.map(function(neighborhood){
       return [neighborhood.name, neighborhood.id];
     });
-    // console.log(neighborhood_names);
+    console.log(neighborhood_names);
   })
   .fail(function(err){
     console.error("Couldn't load neighborhood list");
