@@ -4,7 +4,8 @@ $(document).ready(function(){
 
   $("#user_registration_form").hide();
   $("#user_signin_form").hide();
-  $("#add_toilet_form").hide();
+  // $("#add_toilet_form").hide();
+  $("#toilet_button").hide();
 
   var serverURL = 'http://localhost:3000';
 
@@ -26,7 +27,8 @@ $(document).ready(function(){
   });
 
   $("#dropdownMenu1").on("click", function(){
-
+    $("#user_signin_form").hide();
+    $("#user_registration_form").hide();
     $(".dropdown-menu").html('');
     neighborhood_names.forEach(function(pair){
 
@@ -95,6 +97,8 @@ $(document).ready(function(){
       $("#user_signin_form").hide();
       $("#create_account_button").hide();
       $("#sign_in_button").hide();
+      $("#toilet_button").show();
+
       // $('#token').val(textStatus == 'nocontent' ? 'login failed' : data['token']);
       console.log(data);
     }).fail(function(jqxhr, textStatus, errorThrown){
@@ -127,22 +131,45 @@ $(document).ready(function(){
 
      });
 
+   // $.ajax({
+   //  url: 'http://localhost:3000/neighborhoods/' + neighborhood_id + '/bathrooms',
+   //    headers: { Authorization: 'Token token=' + localStorage.token },
+   //    contentType: 'application/json',
+   //    data:
+   // })
+
 
 
    $("#create_account_button").on("click", function(){
     console.log("register button clicked!");
       $("#user_registration_form").show();
+      $("#user_signin_form").hide();
+
    });
 
     $("#sign_in_button").on("click", function(){
     console.log("signin button clicked!");
        $("#user_signin_form").show();
+       $("#user_registration_form").hide();
+
    });
 
+    $("#back_to_home_logo").on("click", function(){
+      console.log('bathrooms clear button clicked!');
+      $("#clear_bathrooms").hide();
+      $("#user_registration_form").hide();
+      $("#user_signin_form").hide();
 
+    });
 
+    $("#toilet_button").on("click", function(){
+      console.log("add toilet butotn clicked!");
+      $("#add_toilet_form").show();
+    });
 
-
+    $("#done_adding_bathroom_button").on("click", function(){
+      $("#add_toilet_form").hide();
+    });
 
    });
 

@@ -13,10 +13,11 @@
   <script src="js/bathrooms.js" type="text/javascript" charset="utf-8" async defer></script>
   <nav class="navbar navbar-default">
         <a class="navbar-brand" href="#">
-        <img alt="Brand" src="imagery/toilet.png">
+        <img id="back_to_home_logo" alt="Brand" src="imagery/toilet.png">
         </a>
         <button id="sign_in_button" type="button" class="btn btn-default navbar-btn">Sign In</button>
         <button id="create_account_button" type="button" class="btn btn-default navbar-btn">Register</button>
+        <button id="toilet_button" type="button" class="btn btn-default navbar-btn">Add Toilet</button>
   </nav>
 
 <body>
@@ -66,7 +67,7 @@
       </div>
 
       <script id='bathrooms' type="text/x-handlebars-template">
-        <div class="col-xs-12">
+        <div id ="clear_bathrooms" class="col-xs-12">
          <h2>{{name}}</h2>
          <hr>
             {{#each bathrooms}}
@@ -111,7 +112,13 @@
     <input class="form-control input-lg" id="add_location" type="text" placeholder="location">
     <input class="form-control input-lg" id="add_address" type="text" placeholder="address">
     <textarea class="form-control" id="add_description" rows="3" placeholder="description"></textarea>
+
     <button class="btn btn-default button_default_style" id="add_bathroom_button" type="button">Submit</button>
+
+    <button class="btn btn-default button_default_style" id="done_adding_bathroom_button" type="button">Done</button>
+
+
+
     </form>
 
 
