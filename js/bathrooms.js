@@ -1,38 +1,38 @@
 "use strict";
 
-var bathrooms = (function(){
+// var bathrooms = (function(){
 
-  var getBathrooms = function(){
-    $.get( "http://localhost:3000/neighborhoods").done(function(response){
-      _renderBathrooms(response.neighborhoods);
-    });
-  };
+//   var getBathrooms = function(){
+//     $.get( "http://localhost:3000/neighborhoods").done(function(response){
+//       _renderBathrooms(response.neighborhoods);
+//     });
+//   };
 
-  var _renderBathrooms = function(neighborhoods){
-
-
-
-  var templatingFunction = Handlebars.compile($('#bathroom-index').html());
+//   var _renderBathrooms = function(neighborhoods){
 
 
 
-  var results = templatingFunction({
-    neighborhoods: neighborhoods
-  });
-  console.log(results);
+//   var templatingFunction = Handlebars.compile($('#bathroom-index').html());
 
-    $("#content").html(results);
-  };
 
-  return {
-    indexBathrooms: getBathrooms
-  };
 
-})();
+//   var results = templatingFunction({
+//     neighborhoods: neighborhoods
+//   });
+//   console.log(results);
 
-$(document).ready(function(){
+//     $("#content").html(results);
+//   };
 
-$("#neighborhoods").on('click', function(event){
+//   return {
+//     indexBathrooms: getBathrooms
+//   };
+
+// })();
+
+  $(document).ready(function(){
+
+  $("#neighborhoods").on('click', function(event){
   var bathroom_id = event.target.dataset.id;
   // alert("BATHROOOM ID IS " + bathroom_id);
 
@@ -49,7 +49,9 @@ $("#neighborhoods").on('click', function(event){
 
      $("#content").html(results);
 
-  })
+  });
 });
 
 });
+
+

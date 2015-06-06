@@ -1,9 +1,21 @@
 .navbar {
   background: rgba(80,227,194, .6);
-  margin: 0px;
+
+  border: none;
 }
 
+.navbar-header {
+  width: 300px;
 
+}
+
+.navbar-btn {
+  float: right;
+  display: inline-block;
+  border: none;
+  margin-right: 30px;
+
+}
 
 
 body {
