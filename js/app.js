@@ -2,6 +2,10 @@
 
 $(document).ready(function(){
 
+  $("#user_registration_form").hide();
+  $("#user_signin_form").hide();
+  $("#add_toilet_form").hide();
+
   var serverURL = 'http://localhost:3000';
 
   var neighborhood_names = [];
@@ -48,29 +52,6 @@ $(document).ready(function(){
     });
   };
 
-  //  $("#add_neighborhoods_dropdown").on("click", function(){
-  //   console.log('dropdown clicks');
-  //   // $("#add_neighborhoods_list").html('');
-  //   console.log('list clears');
-
-
-  // neighborhood_names.forEach(function(neighborhood){
-  //   var name = neighborhood[0];
-  //   var id = neighborhood[1];
-  //   var html = "<option value='" + id + "'>'" + name + "</option> ";
-
-  //   $('#add_neighborhoods_list').append(html);
-
-  // });
-    //   $("#add_neighborhoods_list").append(
-    //     '<li role="presentation"><a role="menuitem" tabindex="-1" data-id="' + two[1] + '" href="#">' + two[0] + '</a></li>');
-    // });
-
-    // neighborhood_names.forEach(function(two){
-    // $("#add_neighborhoods_list").append(
-    //     '<option value="' + "a role="menuitem" tabindex="-1" data-id="' + two[1] + '" href="#">' + two[0] + '</a></li>');
-    // });
-
   $("#register-user").click("click", function(){
     console.log("button clicked");
 
@@ -87,6 +68,8 @@ $(document).ready(function(){
     })
     .done(function(){
       console.log("new user successfully registered");
+      $("#create_account_button").hide();
+      $("#user_registration_form").hide();
     })
     .fail(function(){
       console.log("unable to create new user");
@@ -109,6 +92,9 @@ $(document).ready(function(){
       method: "POST"
     }).done(function(data, textStatus) {
       localStorage.setItem('token', data.token);
+      $("#user_signin_form").hide();
+      $("#create_account_button").hide();
+      $("#sign_in_button").hide();
       // $('#token').val(textStatus == 'nocontent' ? 'login failed' : data['token']);
       console.log(data);
     }).fail(function(jqxhr, textStatus, errorThrown){
@@ -140,5 +126,23 @@ $(document).ready(function(){
       });
 
      });
+
+
+
+   $("#create_account_button").on("click", function(){
+    console.log("register button clicked!");
+      $("#user_registration_form").show();
+   });
+
+    $("#sign_in_button").on("click", function(){
+    console.log("signin button clicked!");
+       $("#user_signin_form").show();
+   });
+
+
+
+
+
+
    });
 

@@ -15,7 +15,8 @@
         <a class="navbar-brand" href="#">
         <img alt="Brand" src="imagery/toilet.png">
         </a>
-      <button type="button" class="btn btn-default navbar-btn">Sign in</button>
+        <button id="sign_in_button" type="button" class="btn btn-default navbar-btn">Sign In</button>
+        <button id="create_account_button" type="button" class="btn btn-default navbar-btn">Register</button>
   </nav>
 
 <body>
@@ -78,15 +79,16 @@
       </script>
 
 
-    <form class="form-group">
-      <h2 class="form-signin-heading">Register</h2>
-      <input type="email" class="form-control" id="register-user-email" placeholder="Enter email">
-      <input  class="form-control" id="register-user-password" placeholder="Password">
-      <input type="password-check" class="form-control" id="password-confirmation" placeholder="Confirm Password">
-      <button type="button" class="btn btn-default button_default_style" id="register-user">Submit</button>
-    </form>
+      <form id="user_registration_form" class="form-group">
+        <h2 class="form-signin-heading">Register</h2>
+        <input type="email" class="form-control" id="register-user-email" placeholder="Enter email">
+        <input  class="form-control" id="register-user-password" placeholder="Password">
+        <input type="password-check" class="form-control" id="password-confirmation" placeholder="Confirm Password">
+        <button type="button" class="btn btn-default button_default_style" id="register-user">Submit</button>
+      </form>
 
-    <form class="form-signin">
+
+    <form id="user_signin_form" class="form-signin">
       <h2 class="form-signin-heading">Sign In</h2>
       <input type="email" class="form-control" id="input_email" placeholder="Email Address">
       <input  class="form-control" id="input_password" placeholder="Password">
@@ -100,7 +102,7 @@
     <button classs="btn btn-default button_default_style" id="signin_button" type="button">Sign in</button>
     </form> -->
 
-    <form>
+    <form id="add_toilet_form">
     <h2 class="form-signin-heading">Add A Toilet</h2>
     <select class="form-control input-lg" id="add_neighborhoods_dropdown">
     <!--  <ul id="add_neighborhoods_list" class="dropdown-menu" role="menu" aria-labelledby="add_neighborhoods_dropdown">
