@@ -7,7 +7,7 @@ $(document).ready(function(){
   $("#add_toilet_form").hide();
   $("#toilet_button").hide();
 
-  var serverURL = 'http://localhost:3000';
+  var serverURL = 'https://evening-gorge-5099.herokuapp.com/';
 
   var neighborhood_names = [];
 
@@ -63,7 +63,7 @@ $(document).ready(function(){
 
 
     $.ajax({
-      url: 'http://localhost:3000/register',
+      url: 'https://evening-gorge-5099.herokuapp.com/register',
       data: newUser,
       datatype: 'json',
       method: 'POST'
@@ -81,7 +81,7 @@ $(document).ready(function(){
   $("#signin_button").on("click", function(){
     console.log("signing butotn workssss");
 
-    $.ajax('http://localhost:3000/login',{
+    $.ajax('https://evening-gorge-5099.herokuapp.com/login',{
       contentType: 'application/json',
       processData: false,
       data: JSON.stringify({
@@ -113,7 +113,7 @@ $(document).ready(function(){
     var neighborhood_id = $("#add_neighborhoods_dropdown :selected").val();
 
   $.ajax({
-    url: 'http://localhost:3000/neighborhoods/' + neighborhood_id + '/bathrooms',
+    url: 'https://evening-gorge-5099.herokuapp.com/neighborhoods/' + neighborhood_id + '/bathrooms',
       headers: { Authorization: 'Token token=' + localStorage.token },
       contentType: 'application/json',
       data: JSON.stringify({
