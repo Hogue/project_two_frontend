@@ -4,7 +4,7 @@ $(document).ready(function(){
 
   $("#user_registration_form").hide();
   $("#user_signin_form").hide();
-  // $("#add_toilet_form").hide();
+  $("#add_toilet_form").hide();
   $("#toilet_button").hide();
 
   var serverURL = 'http://localhost:3000';
@@ -131,6 +131,30 @@ $(document).ready(function(){
 
      });
 
+  //   $("#remove_bathroom_button").on("click", function(event){
+  //   console.log("remove bathroom button clicked!");
+
+  //   var neighborhood_id = $("#add_neighborhoods_dropdown :selected").val();
+
+  // $.ajax({
+  //   url: 'http://localhost:3000/neighborhoods/' + neighborhood_id + '/bathrooms',
+  //     headers: { Authorization: 'Token token=' + localStorage.token },
+  //     contentType: 'application/json',
+  //     data: JSON.stringify({
+  //       bathroom: {
+  //         location: $("#remove_location").val(),
+  //         address: $("#remove_location").val(),
+  //         description: $("#remove_description").val()
+  //       }
+  //     }),
+  //     dataType: "json",
+  //     method: "DELETE",
+  //     }).done(function(){
+  //       console.log('bathroom has been deleted!');
+  //     });
+
+  //    });
+
    // $.ajax({
    //  url: 'http://localhost:3000/neighborhoods/' + neighborhood_id + '/bathrooms',
    //    headers: { Authorization: 'Token token=' + localStorage.token },
@@ -172,4 +196,3 @@ $(document).ready(function(){
     });
 
    });
-

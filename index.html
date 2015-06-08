@@ -1,86 +1,47 @@
-<!DOCTYPE html>
+<!DOCYPE html>
 <html>
 <head>
   <meta charset="utf-8">
   <title>ToiletSeek</title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" />
   <link rel="stylesheet" type="text/css" href="css/styles.css">
-
   <script src="js/handlebars-v3.0.3.js"></script>
-   <script src="https://code.jquery.com/jquery-2.1.4.min.js" type="text/javascript"></script>
+  <script src="https://code.jquery.com/jquery-2.1.4.min.js" type="text/javascript"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js" type="text/javascript"></script>
   <script src="js/app.js" type="text/javascript" charset="utf-8" async defer></script>
   <script src="js/bathrooms.js" type="text/javascript" charset="utf-8" async defer></script>
-  <nav class="navbar navbar-default">
-        <a class="navbar-brand" href="#">
-        <img id="back_to_home_logo" alt="Brand" src="imagery/toilet.png">
-        </a>
-        <button id="sign_in_button" type="button" class="btn btn-default navbar-btn">Sign In</button>
-        <button id="create_account_button" type="button" class="btn btn-default navbar-btn">Register</button>
-        <button id="toilet_button" type="button" class="btn btn-default navbar-btn">Add Toilet</button>
+
+  <nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a id="back_to_home_logo" class="navbar-brand" href="#">ToiletSeek</a>
+      </div>
+      <div id="navbar" class="navbar-collapse collapse">
+        <ul class="nav navbar-nav navbar-right">
+          <li><a id="create_account_button" href="#">Register</a></li>
+          <li><a id="sign_in_button" href="#">Sign In</a></li>
+          <li><a id="toilet_button"href="#">Add<span class="sr-only">(current)</span></a></li>
+        </ul>
+      </div><!--/.nav-collapse -->
+    </div>
   </nav>
 
+</head>
 <body>
-
-  <div class='container'>
-    <div class='row'>
-      <div class="col-xs-12 center-piece"><img alt='Brand' src='imagery/toilet2.png'></div>
+  <div class="jumbotron">
+    <div class="container">
+      <span class="center-piece" id="hero_image_two"><img id="hero_image_one" src="imagery/toilet2.png" class="image-responsive center-block"></span>
+      <p>This is a template for a simple marketing or informational website. It includes a large callout called a jumbotron and three supporting pieces of content. Use it as a starting point to create something more unique.</p>
     </div>
-    <div class='row'>
-      <div class="col-xs-12 center-piece">
-        <div class="dropdown not-there">
-          <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-expanded="true">
-            Neighborhoods
-            <span class="caret"></span>
-          </button>
-          <ul id="neighborhoods" class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
-            <!-- <li role="presentation"><a role="menuitem" tabindex="-1" id="allston" href="#">Allston</a></li>
-            <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Back Bay</a></li>
-            <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Bay Village</a></li>
-            <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Beacon Hill</a></li>
-            <li role="presentation" id="brighton_content"><a role="menuitem" tabindex="-1" id="brighton" href="#">Brighton</a></li>
-            <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Charlestown</a></li>
-            <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Chinatown</a></li>
-            <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Dorchester</a></li>
-            <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Downtown</a></li>
-            <li role="presentation"><a role="menuitem" tabindex="-1" href="#">East Boston</a></li>
-            <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Fenway Kenmore</a></li>
-            <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Hyde Park</a></li>
-            <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Jamaica Plain</a></li>
-            <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Mattapan</a></li>
-            <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Mission Hill</a></li>
-            <li role="presentation"><a role="menuitem" tabindex="-1" href="#">North End</a></li>
-            <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Roxbury</a></li>
-            <li role="presentation"><a role="menuitem" tabindex="-1" href="#">South Boston</a></li>
-            <li role="presentation"><a role="menuitem" tabindex="-1" href="#">South End</a></li>
-            <li role="presentation"><a role="menuitem" tabindex="-1" href="#">West End</a></li> -->
-          </ul>
-        </div>
+  </div>
 
-       <div class="content-container">
-        <div class="page-header">
-          <h1>Bathrooms</h1>
-        </div>
-            <div class="row">
-            <div id="content"></div>
-        </div>
-      </div>
-
-      <script id='bathrooms' type="text/x-handlebars-template">
-        <div id ="clear_bathrooms" class="col-xs-12">
-         <h2>{{name}}</h2>
-         <hr>
-            {{#each bathrooms}}
-              <h4>{{location}}</h4>
-              <h4>{{address}}</h4>
-              <p>{{description}}</p>
-              <hr>
-             {{/each}}
-        </div>
-      </script>
-
-
-      <form id="user_registration_form" class="form-group">
+   <form id="user_registration_form" class="form-group form-signin">
         <h2 class="form-signin-heading">Register</h2>
         <input type="email" class="form-control" id="register-user-email" placeholder="Enter email">
         <input  class="form-control" id="register-user-password" placeholder="Password">
@@ -88,41 +49,80 @@
         <button type="button" class="btn btn-default button_default_style" id="register-user">Submit</button>
       </form>
 
-
-    <form id="user_signin_form" class="form-signin">
+      <form id="user_signin_form" class="form-signin">
       <h2 class="form-signin-heading">Sign In</h2>
       <input type="email" class="form-control" id="input_email" placeholder="Email Address">
       <input  class="form-control" id="input_password" placeholder="Password">
       <button type="button" class="btn btn-default button_default_style" id="signin_button">Submit</button>
     </form>
 
-   <!--  <form class="form-signin">
-    <h2 class="form-signin-heading">Sign In</h2>
-    <input type="email" id="input_email" class="form-control" placeholder="Email address" required autofocus>
-    <input type="password" id="input_password" class="form-control" placeholder="Password" required>
-    <button classs="btn btn-default button_default_style" id="signin_button" type="button">Sign in</button>
-    </form> -->
+  <div class='row'>
+    <div class="col-xs-12 center-piece">
+      <div class="dropdown not-there">
+        <button class="btn btn-danger dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-expanded="true">
+          Neighborhoods
+          <span class="caret"></span>
+        </button>
+        <ul id="neighborhoods" class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+        </ul>
+      </div>
+
+      <div class="content-container">
+        <div class="page-header">
+          <h1>Bathrooms</h1>
+        </div>
+        <div class="row">
+          <div id="content"></div>
+        </div>
+      </div>
+
+      <script id='bathrooms' type="text/x-handlebars-template">
+        <div id ="clear_bathrooms" class="col-xs-12">
+          <h2>{{name}}</h2>
+          <hr>
+          {{#each bathrooms}}
+          <h4>{{location}}</h4>
+          <h4>{{address}}</h4>
+          <p>{{description}}</p>
+          <hr>
+          {{/each}}
+        </div>
+      </script>
+
 
     <form id="add_toilet_form">
-    <h2 class="form-signin-heading">Add A Toilet</h2>
-    <select class="form-control input-lg" id="add_neighborhoods_dropdown">
-    <!--  <ul id="add_neighborhoods_list" class="dropdown-menu" role="menu" aria-labelledby="add_neighborhoods_dropdown">
-      </ul>-->
-    </select>
-    <input class="form-control input-lg" id="add_location" type="text" placeholder="location">
-    <input class="form-control input-lg" id="add_address" type="text" placeholder="address">
-    <textarea class="form-control" id="add_description" rows="3" placeholder="description"></textarea>
-
-    <button class="btn btn-default button_default_style" id="add_bathroom_button" type="button">Submit</button>
-
-    <button class="btn btn-default button_default_style" id="done_adding_bathroom_button" type="button">Done</button>
-
-
-
+      <h2 class="form-signin-heading">Add A Toilet</h2>
+      <select class="form-control input-lg" id="add_neighborhoods_dropdown">
+      <!--  <ul id="add_neighborhoods_list" class="dropdown-menu" role="menu" aria-labelledby="add_neighborhoods_dropdown">
+        </ul>-->
+      </select>
+      <input class="form-control input-lg" id="add_location" type="text" placeholder="location">
+      <input class="form-control input-lg" id="add_address" type="text" placeholder="address">
+      <textarea class="form-control" id="add_description" rows="3" placeholder="description"></textarea>
+      <button class="btn btn-default button_default_style" id="add_bathroom_button" type="button">Submit</button>
+      <button class="btn btn-default button_default_style" id="done_adding_bathroom_button" type="button">Done</button>
     </form>
 
 
-</body>
+    </body>
+    <footer>
+      <div class="container">
+        <hr class="">
+        <div class="row">
+          <div class="col-xs-12 footer-buttons">
+            <a class="btn btn-default btn-lg btn-block" href="#"><strong><span class="fa-check fa">&nbsp;</span>Register</strong> an account</a>
+            <a class="btn btn-default btn-lg btn-block" href="#"><strong><span class="fa-calendar fa">&nbsp;</span>User</strong> Login</a>
+            <a class="btn btn-default btn-lg btn-block" href="#"><strong><span class="fa-gift fa">&nbsp;</span>Add</strong> a location</a>
+          </div>
+        </div>
+        <hr>
+        <div class="row">
+          <div class="col-xs-12">
+            <p><a href="#" class=""><img src="imagery/toilet.png" class=""></a></p>
+            <p class=""> <small class=""> © Andrew Hogue<br></p>
+          </div>
+        </div>
+      </div>
+    </footer>
+    </html>
 
-
-</html>

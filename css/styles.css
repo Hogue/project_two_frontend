@@ -1,43 +1,60 @@
 .navbar {
-  background: rgba(80,227,194, .6);
-
-  border: none;
+  background-color: rgb(0,0,0)!important;
 }
-
-.navbar-header {
-  width: 300px;
-
-}
-
-.navbar-btn {
-  float: right;
-  display: inline-block;
-  border: none;
-  margin-right: 30px;
-
-}
-
 
 body {
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-color: #CCCCCC;
+  padding-top: 50px;
+  padding-bottom: 20px;
+  background-color: rgb(232,232,232)
+!important;
 
 }
 
-/*#signin_button_background {
-  width: 80px;
-  height: 40px;
-  background-color: #fff;
-}*/
+
+@media(max-width: 994px) {
+  span[id=hero_image_two] {
+    display:block;
+    background-image: url("../imagery/toiletsmall.png");
+    background-repeat: no-repeat !important;
+      background-position: center !important;
+      width: 500px !important;
+      height: 250px !important;
+
+  }
+  img[id=hero_image_one] {
+    display: none;
+  }
+}
+
+@media(max-width: 565px) {
+  span[id=hero_image_two] {
+    display:block;
+    background-image: url("../imagery/toiletmedium.png");
+    background-repeat: no-repeat !important;
+      background-position: left !important;
+      width: 500px !important;
+      height: 250px !important;
+      margin: 0px 0px 0px 100px;
+
+  }
+  img[id=hero_image_one] {
+    display: none;
+  }
+}
 
 .center-piece {
   text-align: center;
   margin: 0 auto;
   padding: 50px 50px 0px 50px;
+}
+
+.center-block {
+  padding: 30px;
+}
+
+#dropdownMenu1 {
+  width: 200px;
+  height: 40px;
 }
 
 .dropdown-menu {
@@ -56,18 +73,15 @@ body {
   }
 }
 
-.bathrooms-layout {
-  font-size: 40px;
-}
 
-.form-group {
+form-group {
   max-width: 330px;
   padding: 15px;
   margin: 0 auto;
 }
 
 .form-signin {
-  max-width: 330px;
+  max-width: 500px;
   padding: 15px;
   margin: 0 auto;
 }
@@ -95,8 +109,6 @@ label {
 
 }
 
-
-
 .button_default_style {
   max-width: 100%;
   color: #fff;
@@ -108,15 +120,4 @@ label {
   display: block;
 
 }
-
-/*#delete_neighborhood_button {
-  float: right;
-}*/
-
-/*#done_adding_bathroom_button {
-  float: left;
-}*/
-
-
-
 
