@@ -12,7 +12,7 @@ $(document).ready(function(){
   var neighborhood_names = [];
 
   $.get(
-    serverURL + "/neighborhoods"
+    serverURL
   )
   .done(function(res){
     // console.log(res);
