@@ -37,7 +37,7 @@
   // alert("BATHROOOM ID IS " + bathroom_id);
 
   $.ajax({
-    url: 'http://localhost:3000/neighborhoods/' + bathroom_id,
+    url: 'https://evening-gorge-5099.herokuapp.com/neighborhoods/' + bathroom_id,
     dataType: 'json',
     method: 'GET'
   })
