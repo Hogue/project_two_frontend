@@ -33,7 +33,7 @@
   </nav>
 
 </head>
-<body>
+<body >
   <div class="jumbotron">
     <div class="container">
       <span class="center-piece" id="hero_image_two"><img id="hero_image_one" src="imagery/toilet2.png" class="image-responsive center-block"></span>
@@ -81,10 +81,11 @@
           <h2>{{name}}</h2>
           <hr>
           {{#each bathrooms}}
-          <h4>{{location}}</h4>
-          <h4>{{address}}</h4>
-          <p>{{description}}</p>
-          <hr>
+            <h4>{{location}}</h4>
+            <h4>{{address}}</h4>
+            <p>{{description}}</p>
+            <button data-id={{id}}  type="button" class="delete_bathroom_button">Delete</button>
+            <hr>
           {{/each}}
         </div>
       </script>

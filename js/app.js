@@ -248,4 +248,79 @@ $(document).ready(function(){
    //    data:
    // })
 
+  // $("#neighborhoods").on('click', function(event){
+
+  //   var bathroom_id = event.target.dataset.id;
+  //   // alert("BATHROOOM ID IS " + bathroom_id);
+
+  //   $.ajax({
+  //     url: 'http://localhost:3000/neighborhoods/' + bathroom_id,
+  //     dataType: 'json',
+  //     method: 'GET'
+  //   })
+  //   .done(function(neighborhood_data){
+  //     console.log(neighborhood_data);
+  //     var template = Handlebars.compile($('#bathrooms').html());
+
+  //      var results = template(neighborhood_data);
+
+  //      $("#content").html(results);
+
+  //   });
+  // });
+
+
+     // DELETE BUTTON CLICK HANDLER
+     // because it doesn't exist on load (due to the button being part of the handlebars template — which gets injected after load)
+     // the button can't just have a click handler placed on it
+     // so we apply the concept of 'bubbling' and therefore
+     // place the click handler on the div that our handlebars template gets injected under
+     // since the div exists on load, we can target it's ID and then target our button's class, like so...
+     $('#content').on('click', '.delete_bathroom_button', function(event){
+        console.log('delete button clicked!');
+        // SAVE neighborhood id into a variable to be referenced when we send our ajax request with the URL route
+        // it's already been stored in the body because we needed a place
+        // to save it after our bathroom post gets deleted
+        // otherwise the deletion, removes our neighborhood id that we need
+        // for our route in order to delete a bathroom post
+        // the actual id gets saved to the body in our bathroom.js file (line 42)
+        var neighborhood_bathroom_id = $('body').data('current-neigh');
+        // Save bathroom id into a variable to be referenced when we send our ajax request with the URL route
+        // this is already saved within the button that our event is targeting
+        // the button already has the bathroom id BECAUSE
+        // we included it within our bathroom template
+        // which contains the entire bathroom object
+        // so we can insert any of that information in our template
+        // AS LONG AS our bathroom serializer included :id, in it
+        var delete_bathroom_id = event.target.dataset.id;
+
+        // AJAX DELETE REQUEST
+        $.ajax({
+          headers: { Authorization: 'Token token=' + localStorage.token },
+          url: 'http://localhost:3000/neighborhoods/' + neighborhood_bathroom_id + '/bathrooms/' + delete_bathroom_id,
+          dataType: 'json',
+          method: 'DELETE'
+          })
+          .done(function(neighborhood_data){
+          console.log('yo shit has done been deleted son!');
+          // ON DONE - we 'trigger' our dropdown neighborhood selector
+          // and trigger a 'click'
+          // which simulates an actual click
+          // THIS IS BECAUSE
+          // in our bathroom.js file, the $("#neighborhoods") click handler
+          // fires the request that populates the selected neighborhood's bathrooms
+          // therefore, within that script...
+          // I included a .html('') BEFORE actually populating the data
+          // THIS MEANS, the function clears all HTML then replaces it
+          // so when we delete a post, it instantly gets cleared, then replaced
+          // BUT IF IT WAS JUST DELTED...
+          // then it will clear and will not reappear, because it's not gone from the backend!! fuckinnnn coooooool
+          $('#neighborhoods').trigger('click');
+
+          });
+     });
+
 });
+
+
+
