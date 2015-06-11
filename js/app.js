@@ -17,6 +17,7 @@ $(document).ready(function(){
       $("#clear_bathrooms").hide();
       $("#user_registration_form").hide();
       $("#user_signin_form").hide();
+      $("#add_toilet_form").hide();
     });
 
   // ***** REGISTER BUTTON ********** //
