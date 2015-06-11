@@ -205,7 +205,7 @@ $(document).ready(function(){
         data: JSON.stringify({
           bathroom: {
             location: $("#add_location").val(),
-            address: $("#add_location").val(),
+            address: $("#add_address").val(),
             description: $("#add_description").val()
           }
         }),
@@ -213,6 +213,8 @@ $(document).ready(function(){
         method: "POST",
         }).done(function(){
           console.log('new bathroom has been added!');
+          $('#neighborhoods').trigger('click');
+
         });
 
         });
